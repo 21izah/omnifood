@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  /* does not work on safari and microsoft edge */
+  /* scroll-behavior: smooth; */
+}
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  /* font-family: Arial, sans-serif; */
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+
+  /* only works if there is nothing positioned in relation to body */
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header {
+  background-color: aquamarine;
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url(/img/mediamodifier-p54tLz-qp5E-unsplash.jpg);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/img/mediamodifier-p54tLz-qp5E-unsplash.jpg); */
+  background-size: cover;
+  color: bisque;
+}
+
+nav {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+
+.header_container {
+  width: 1200px;
+  position: absolute;
+  /* in relation to the parent size */
+  left: 50%;
+  top: 50%;
+
+  /* in relation to the element size */
+  transform: translate(-50%, -50%);
+}
+.header_container_inner {
+  width: 50%;
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 32px;
+  line-height: 1.05;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+.btnl:link,
+.btnl:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #a32c2c;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+section {
+  padding: 96px 0px;
+}

@@ -1,0 +1,284 @@
+/* rem and em do NOT depend on html font-size in media queries!
+instead, 1rem = 1em = 16px
+*/
+
+/* Below 1344px (for smaller desktops) */
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading_primary {
+    font-size: 3rem;
+  }
+  .heading_tetiary {
+    font-size: 3.6rem;
+    line-height: 4rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* below 1200px (landscape tablets) */
+
+@media (max-width: 75em) {
+  html {
+    /* 9px/16px=56.25 */
+    font-size: 56.25%;
+  }
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading_secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading_tetiary {
+    font-size: 2.4rem;
+  }
+
+  .main_nav_list {
+    gap: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+  .testimonials_container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/* below 944px (portrait tablets)  */
+@media (max-width: 59em) {
+  html {
+    /* 8px/16px=50 */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero_text_box,
+  .hero_img_box {
+    text-align: center;
+  }
+
+  .hero_img {
+    width: 60%;
+  }
+
+  .delivered_meal {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step_number {
+    font-size: 7.4rem;
+  }
+
+  .meal_content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section_testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta_form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn__form {
+    margin-top: 1.2rem;
+  }
+  /* mobile navigation */
+  .btn_mobile_nav {
+    display: block;
+    z-index: 1000;
+  }
+  .main_nav {
+    /* display:none doesn't allow any transition or animation use opacity instead */
+    /* display: none; */
+
+    /* 1. hide it visually */
+    opacity: 0;
+    /* 2. make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3. hide it from screen readers */
+    visibility: hidden;
+    background-color: rgba(0225, 0225, 0225, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    /* padding: 2rem;
+    z-index: 1000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+  }
+
+  .nav_open .main_nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav_open .icon_mobile_nav[name="close-outline"] {
+    display: block;
+  }
+  .nav_open .icon_mobile_nav[name="menu-outline"] {
+    display: none;
+  }
+  .main_nav_list {
+    font-size: 3rem;
+    flex-direction: column;
+    align-items: center;
+
+    grid: 4.8rem;
+  }
+
+  .main_nav_link:link,
+  .main_nav_link:visited {
+    font-size: 3rem;
+  }
+  .main_nav_link.nav_cta:link,
+  .main_nav_link.nav_cta:visited {
+    font-size: 2.5rem;
+  }
+}
+
+/* (smaller tablets)  */
+
+@media (max-width: 44em) {
+  .grid__3cols,
+  .grid__4cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading_secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing_plan {
+    width: 100%;
+  }
+  .pricing_plan:hover {
+    width: 100%;
+  }
+
+  .grid__footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .nav_col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  .logo_col,
+  .address_col {
+    grid-column: span 3;
+  }
+}
+
+/* below 544px (mobile design) */
+
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .grid__2cols,
+  .grid__3cols,
+  .grid__4cols {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .section_hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero_img {
+    width: 80%;
+  }
+  .logos img {
+    height: 1.2rem;
+  }
+
+  .step_img_box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .step_img_box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+  .cta_img_box {
+    height: 32rem;
+    grid-row: 1;
+  }
+
+  .cta_text_box {
+    padding: 3.2rem;
+  }
+}
